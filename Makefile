@@ -23,11 +23,11 @@ fmt:
 	@.venv/bin/black dundie tests integration
 
 test:
-	@.venv/bin/pytest -s --forked
+	@.venv/bin/pytest -s
 
 watch:
 	# @.venv/bin/ptw -- -vv -s tests/
-	@ls **/*.py | entr pytest --forked
+	@ls **/*.py | entr pytest
 
 
 clean:            ## Clean unused files.
