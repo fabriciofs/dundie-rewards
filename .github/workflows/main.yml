@@ -27,4 +27,4 @@ jobs:
       - name: Install Project
         run: pip install '.[test]'
       - name: Run tests
-        run: pytest -vv tests integration
+        run: pytest -vv --forked tests integration
