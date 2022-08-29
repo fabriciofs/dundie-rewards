@@ -1,0 +1,19 @@
+{
+  "editor.mouseWheelZoom": true,
+  "editor.rulers": [
+    80
+  ],
+  "files.exclude": {
+    ".venv": true,
+    ".vscodelocal": true,
+    "**/__pycache__": true,
+    "*.egg-info": true,
+    "build": true
+  },
+  "files.insertFinalNewline": true,
+  "python.analysis.autoImportCompletions": false,
+  "[makefile]": {
+    "editor.insertSpaces": false
+  },
+  "files.trimTrailingWhitespace": true,
+}
