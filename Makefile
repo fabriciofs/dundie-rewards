@@ -26,7 +26,7 @@ test:
 	@.venv/bin/pytest -s --forked
 
 watch:
-	# @.venv/bin/ptw
+	# @.venv/bin/ptw -- -vv -s tests/
 	@ls **/*.py | entr pytest --forked
 
 
