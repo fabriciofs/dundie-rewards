@@ -3,6 +3,10 @@ ipython>=7.0.0,<=8.0.0
 ipdb
 pudb
 pytest-watch
+flake8==4.0.1
+pyproject-flake8
+black
+isort
 
 # Install project as editable
 -e .

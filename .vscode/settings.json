@@ -1,19 +1,24 @@
 {
-  "editor.mouseWheelZoom": true,
-  "editor.rulers": [
-    80
-  ],
-  "files.exclude": {
-    ".venv": true,
-    ".vscodelocal": true,
-    "**/__pycache__": true,
-    "*.egg-info": true,
-    "build": true
-  },
-  "files.insertFinalNewline": true,
-  "python.analysis.autoImportCompletions": false,
-  "[makefile]": {
-    "editor.insertSpaces": false
-  },
-  "files.trimTrailingWhitespace": true,
+    "editor.mouseWheelZoom": true,
+    "editor.rulers": [
+        80
+    ],
+    "files.exclude": {
+        ".venv": true,
+        ".vscodelocal": true,
+        "**/__pycache__": true,
+        "*.egg-info": true,
+        "build": true
+    },
+    "files.insertFinalNewline": true,
+    "python.analysis.autoImportCompletions": false,
+    "[makefile]": {
+        "editor.insertSpaces": false
+    },
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnSave": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "pflake8",
+    "python.linting.enabled": true,
+    "python.formatting.provider": "black",
 }

@@ -17,7 +17,7 @@ def get_logger(
     logfile: Union[str, os.PathLike[str]] = "dundie.log"
 ) -> logging.Logger:
     """Returns a configured logger."""
-    # ch = logging.StreamHandler()  # Console/terminal/stderr
+    # ch = logging.StreamHandler()
     # ch.setLevel(LOG_LEVEL)
     # ch.setFormatter(fmt)
     # log.addHandler(ch)
