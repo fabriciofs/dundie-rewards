@@ -6,7 +6,7 @@ from tests.constants import PEOPLE_FILE
 
 @pytest.mark.unit
 @pytest.mark.high
-def test_load_positive_has_2_people():
+def test_load_positive_has_3_people():
     assert len(load(PEOPLE_FILE)) == 3
 
 

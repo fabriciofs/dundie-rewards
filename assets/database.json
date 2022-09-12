@@ -17,9 +17,9 @@
         }
     },
     "balance": {
-        "jin@dundermifflin.com": 500,
-        "schrute@dundermifflin.com": 100,
-        "glewis@dundermifflin.com": 100
+        "jin@dundermifflin.com": 1050.0,
+        "schrute@dundermifflin.com": 550.0,
+        "glewis@dundermifflin.com": 400.0
     },
     "movement": {
         "jin@dundermifflin.com": [
@@ -27,6 +27,131 @@
                 "date": "2022-09-12T17:11:43.920410",
                 "actor": "system",
                 "value": 500
+            },
+            {
+                "date": "2022-09-12T18:07:13.504509",
+                "actor": "fabriciofs",
+                "value": 500.0
+            },
+            {
+                "date": "2022-09-12T18:07:38.701348",
+                "actor": "fabriciofs",
+                "value": 100.0
+            },
+            {
+                "date": "2022-09-12T18:07:59.459454",
+                "actor": "fabriciofs",
+                "value": 150.0
+            },
+            {
+                "date": "2022-09-12T18:08:52.213397",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:11:54.893222",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:12:13.107413",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:12:23.939097",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:16:33.638266",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:35.358612",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:36.641228",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:37.355868",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:38.114352",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:39.057907",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:39.722468",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:40.385241",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:41.125463",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:41.961930",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:42.833764",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:43.512150",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:17:38.373317",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:17:39.485288",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:17:44.354020",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:18:49.221295",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:18:50.298247",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:19:19.003244",
+                "actor": "fabriciofs",
+                "value": -25.0
             }
         ],
         "schrute@dundermifflin.com": [
@@ -34,6 +159,126 @@
                 "date": "2022-09-12T17:11:43.922049",
                 "actor": "system",
                 "value": 100
+            },
+            {
+                "date": "2022-09-12T18:07:13.504520",
+                "actor": "fabriciofs",
+                "value": 500.0
+            },
+            {
+                "date": "2022-09-12T18:07:59.459465",
+                "actor": "fabriciofs",
+                "value": 150.0
+            },
+            {
+                "date": "2022-09-12T18:08:52.213409",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:11:54.893234",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:12:13.107429",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:12:23.939112",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:16:33.638280",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:35.358624",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:36.641239",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:37.355879",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:38.114369",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:39.057919",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:39.722481",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:40.385254",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:41.125474",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:41.961941",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:42.833797",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:43.512160",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:17:38.373328",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:17:39.485298",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:17:44.354033",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:18:49.221306",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:18:50.298258",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:19:19.003256",
+                "actor": "fabriciofs",
+                "value": -25.0
             }
         ],
         "glewis@dundermifflin.com": [
@@ -41,6 +286,121 @@
                 "date": "2022-09-12T17:11:43.922314",
                 "actor": "system",
                 "value": 100
+            },
+            {
+                "date": "2022-09-12T18:07:13.504522",
+                "actor": "fabriciofs",
+                "value": 500.0
+            },
+            {
+                "date": "2022-09-12T18:08:52.213411",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:11:54.893236",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:12:13.107432",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:12:23.939115",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:16:33.638283",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:35.358626",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:36.641241",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:37.355882",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:38.114372",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:39.057922",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:39.722483",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:40.385256",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:41.125477",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:41.961944",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:42.833800",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:16:43.512163",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:17:38.373330",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:17:39.485301",
+                "actor": "fabriciofs",
+                "value": -25.0
+            },
+            {
+                "date": "2022-09-12T18:17:44.354036",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:18:49.221308",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:18:50.298260",
+                "actor": "fabriciofs",
+                "value": 25.0
+            },
+            {
+                "date": "2022-09-12T18:19:19.003259",
+                "actor": "fabriciofs",
+                "value": -25.0
             }
         ]
     },

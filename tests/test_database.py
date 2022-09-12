@@ -1,6 +1,6 @@
 import pytest
 
-from dundie.database import EMPTY_DB, add_person, commit, connect
+from dundie.database import EMPTY_DB, add_movement, add_person, commit, connect
 
 
 @pytest.mark.unit
@@ -10,7 +10,7 @@ def test_database_schema():
 
 
 @pytest.mark.unit
-def test_dcommit_to_database():
+def test_commit_to_database():
     db = connect()
     data = {
         "name": "Joe Doe",
@@ -38,5 +38,22 @@ def test_add_person_for_the_first_time():
     assert created is True
     assert db["people"][pk] == data
     assert db["balance"][pk] == 500
-    assert len(db["movement"][pk]) > 0
+    assert len(db["movement"][pk]) == 1
     assert db["movement"][pk][0]["value"] == 500
+
+
+@pytest.mark.unit
+def test_add_value_for_person():
+    pk = "joe@doe.com"
+    data = {
+        "name": "Joe Doe",
+        "role": "Salesman",
+        "dept": "Sales",
+    }
+    db = connect()
+    add_person(db, pk, data)
+    commit(db)
+    db = connect()
+    add_movement(db, pk, 250)
+    assert db["balance"][pk] == 750
+    assert len(db["movement"][pk]) == 2

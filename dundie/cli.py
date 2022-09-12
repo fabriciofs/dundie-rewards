@@ -1,3 +1,5 @@
+import json
+
 import pkg_resources
 import rich_click as click
 from rich.console import Console
@@ -42,3 +44,51 @@ def load(filepath):
 
     console = Console()
     console.print(table)
+
+
+@main.command()
+@click.option("--dept", required=False)
+@click.option("--email", required=False)
+@click.option("--output", default=None)
+def show(output, **query):
+    result = core.read(**query)
+
+    if not result:
+        print("Nothing to show")
+
+    if output:
+        with open(output, "w") as output_file:
+            output_file.write(json.dumps(result))
+        return
+
+    table = Table(title="Dunder Mifflin Associates")
+    headers = ["name", "dept", "role", "e-mail", "balance", "last movement"]
+    for header in headers:
+        table.add_column(header, style="magenta")
+
+    for person in result:
+        table.add_row(*[str(value) for value in person.values()])
+
+    console = Console()
+    console.print(table)
+
+
+@main.command()
+@click.argument("value", type=click.FLOAT)
+@click.option("--dept", required=False)
+@click.option("--email", required=False)
+@click.pass_context
+def add(ctx, value, **query):
+    core.add(value, **query)
+    ctx.invoke(show, **query)
+
+
+@main.command()
+@click.argument("value", type=click.FLOAT)
+@click.option("--dept", required=False)
+@click.option("--email", required=False)
+@click.pass_context
+def remove(ctx, value, **query):
+    value = -value
+    core.add(value, **query)
+    ctx.invoke(show, **query)
