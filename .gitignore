@@ -131,3 +131,4 @@ dmypy.json
 
 # ignors logs
 *.log*
+TWINE_PASSWORD.txt

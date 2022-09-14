@@ -16,11 +16,15 @@ click.rich_click.APPEND_METAVARS_HELP = True
 
 
 @click.group()
-@click.version_option(pkg_resources.get_distribution("dundie").version)
+@click.version_option(pkg_resources.get_distribution("ffs-dundie").version)
 def main():
     """Dunder Mifflin Rewards System.
 
-    This cli application controls DM rewards.
+    This cli application controls Dunder Mifflin rewards.
+
+    - admins can load information tot he people database and assign points.
+    - users can view reports and transfer points.
+
     """
 
 
@@ -28,7 +32,9 @@ def main():
 @click.argument("filepath", type=click.Path(exists=True))
 def load(filepath):
     """Loads the file to the database.
+
     ## Features
+
     - Validates data
     - Parses the file
     - Loads to database
@@ -51,6 +57,7 @@ def load(filepath):
 @click.option("--email", required=False)
 @click.option("--output", default=None)
 def show(output, **query):
+    """Shows information about user or dept."""
     result = core.read(**query)
 
     if not result:
@@ -79,6 +86,7 @@ def show(output, **query):
 @click.option("--email", required=False)
 @click.pass_context
 def add(ctx, value, **query):
+    """Add points to the user or dept."""
     core.add(value, **query)
     ctx.invoke(show, **query)
 
@@ -89,6 +97,7 @@ def add(ctx, value, **query):
 @click.option("--email", required=False)
 @click.pass_context
 def remove(ctx, value, **query):
+    """Removes points from the user or dept."""
     value = -value
     core.add(value, **query)
     ctx.invoke(show, **query)
