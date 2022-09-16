@@ -1,13 +1,12 @@
 """initial
 
 Revision ID: 0abdd78b9b2c
-Revises: 
 Create Date: 2022-09-16 18:42:56.454611
 
 """
-from alembic import op
-import sqlalchemy as sa
-import sqlmodel
+from alembic import op # noqa
+import sqlalchemy as sa # noqa
+import sqlmodel # noqa
 
 
 # revision identifiers, used by Alembic.
