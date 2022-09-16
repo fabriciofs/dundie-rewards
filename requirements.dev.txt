@@ -10,6 +10,8 @@ isort
 mkdocs
 wheel
 twine
+mypy
+sqlmodel
 
 # Install project as editable
 -e .

@@ -27,7 +27,7 @@ test:
 
 watch:
 	# @.venv/bin/ptw
-	@ls **/*.py | entr pytest --forked
+	@ls **/*.py | entr -c pytest --forked
 
 
 clean:            ## Clean unused files.
