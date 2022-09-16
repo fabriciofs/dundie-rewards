@@ -40,7 +40,7 @@ def load(filepath):
     - Loads to database
     """
     table = Table(title="Dunder Mifflin Associates")
-    headers = ["name", "dept", "role", "created", "e-mail"]
+    headers = ["email", "name", "dept", "role", "currency", "created"]
     for header in headers:
         table.add_column(header, style="magenta")
 
@@ -59,21 +59,20 @@ def load(filepath):
 def show(output, **query):
     """Shows information about user or dept."""
     result = core.read(**query)
-
-    if not result:
-        print("Nothing to show")
-
     if output:
         with open(output, "w") as output_file:
             output_file.write(json.dumps(result))
-        return
 
-    table = Table(title="Dunder Mifflin Associates")
-    headers = ["name", "dept", "role", "e-mail", "balance", "last movement"]
-    for header in headers:
-        table.add_column(header, style="magenta")
+    if len(result) == 0:
+        print("Nothing to show")
+
+    table = Table(title="Dunder Mifflin Report")
+    for key in result[0]:
+        table.add_column(key.title().replace("_", " "), style="magenta")
 
     for person in result:
+        person["balance"] = f"{person['balance']:.2f}"
+        person["value"] = f"{person['value']:.2f}"
         table.add_row(*[str(value) for value in person.values()])
 
     console = Console()
@@ -81,7 +80,7 @@ def show(output, **query):
 
 
 @main.command()
-@click.argument("value", type=click.FLOAT)
+@click.argument("value", type=click.INT, required=True)
 @click.option("--dept", required=False)
 @click.option("--email", required=False)
 @click.pass_context
@@ -92,12 +91,11 @@ def add(ctx, value, **query):
 
 
 @main.command()
-@click.argument("value", type=click.FLOAT)
+@click.argument("value", type=click.INT, required=True)
 @click.option("--dept", required=False)
 @click.option("--email", required=False)
 @click.pass_context
 def remove(ctx, value, **query):
     """Removes points from the user or dept."""
-    value = -value
-    core.add(value, **query)
+    core.add(-value, **query)
     ctx.invoke(show, **query)

@@ -1,57 +1,69 @@
-from pydantic import BaseModel, validator
-from decimal import Decimal
 from datetime import datetime
+from typing import Optional
+
+from pydantic import condecimal, validator
+from sqlmodel import Field, Relationship, SQLModel
+
 from dundie.utils.email import check_valid_email
+from dundie.utils.user import generate_simple_password
 
 
 class InvalidEmailError(Exception):
     ...
 
 
-class Person(BaseModel):
-    pk: str
-    name: str
-    dept: str
-    role: str
+class Person(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True, index=True)
+    email: str = Field(nullable=False, index=True)
+    name: str = Field(nullable=False)
+    dept: str = Field(nullable=False, index=True)
+    role: str = Field(nullable=False)
+    currency: str = Field(default="USD")
 
-    @validator("pk")
-    def validate_email(cls, v):
+    balance: "Balance" = Relationship(back_populates="person")
+    movement: "Movement" = Relationship(back_populates="person")
+    user: "User" = Relationship(back_populates="person")
+
+    @validator("email")
+    def validate_email(cls, v: str) -> str:
         if not check_valid_email(v):
             raise InvalidEmailError(f"Invalid email for {v!r}")
         return v
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.name} - {self.role}"
 
 
-class Balance(BaseModel):
-    person: Person
-    value: Decimal
+class Balance(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True, index=True)
+    person_id: int = Field(foreign_key="person.id")
+    value: condecimal(decimal_places=3) = Field(default=0)
 
-    @validator("value", pre=True)
-    def value_logic(cls, v):
-        return Decimal(v) * 2
+    person: Person = Relationship(back_populates="balance")
 
     class Config:
         json_encoders = {Person: lambda p: p.pk}
 
 
-class Movement(BaseModel):
-    person: Person
-    date: datetime
-    actor: str
-    value: Decimal
+class Movement(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True, index=True)
+    person_id: int = Field(foreign_key="person.id")
+    actor: str = Field(nullable=False, index=True)
+    value: condecimal(decimal_places=3) = Field(default=0)
+    date: datetime = Field(default_factory=lambda: datetime.now())
+
+    person: Person = Relationship(back_populates="movement")
+
+    class Config:
+        json_encoders = {Person: lambda p: p.pk}
 
 
-# p = Person(
-#     pk="fabriciofs@gmail.com",
-#     name="Fabricio Ferreira",
-#     dept="IT",
-#     role="Dev"
-# )
-# # print(p.json())
+class User(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True, index=True)
+    person_id: int = Field(foreign_key="person.id")
+    password: str = Field(default_factory=generate_simple_password)
 
-# # print()
+    person: Person = Relationship(back_populates="user")
 
-# b = Balance(person=p, value=100)
-# print(b.json(models_as_dict=False))
+    class Config:
+        json_encoders = {Person: lambda p: p.pk}
